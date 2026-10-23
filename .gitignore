@@ -1,0 +1,12 @@
+# Build outputs
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.lib
+__pycache__/
+# Measurement outputs
+*.csv
+CloudLatencyFPS_compare*.html

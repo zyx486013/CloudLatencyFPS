@@ -1,0 +1,23 @@
+CloudLatencyFPS 0.8.1 Windows x64
+Strict LLVM-MinGW 20260616 C++17/O2 Wall/Wextra/Wpedantic/Werror: PASS
+Clang static analysis: PASS, no diagnostics
+Window stack regression checked against actual v0.8.0 sources:
+  old optimized AppWindowProc frame: 208888 bytes (default process stack reserve 1MiB)
+  fixed AppWindowProc frame: 288 bytes; PaintWindow frame: 784 bytes
+  automatic compiler frame budget 4096 bytes: PASS
+  published PE Windows stack reserve: 4194304 bytes (4MiB)
+Actual BindSurface/DispatchPaint functions under synchronous Win32 mocks: PASS
+  500 window/maximized/fullscreen/DPI size transitions
+  Unbind-before-resize; stable-size no-resize; zero/negative sizes
+  rectangle/unbind/resize/rebind failures; hidden-surface reveal
+  eight nested WM_PAINT requests coalesced, active paint never reentered
+Actual OpenGL Build/Paint via Linux EGL/Mesa: PASS
+  Eight views/profile combinations; stationary high/extreme frames identical; exact HUD pixels
+  Surface recreation/rebind/draw at 720x400, 1920x1080, 3840x2160, 1920x1040 and restored sizes
+  Ten resize transitions; no GL errors
+Core protocol/layout/ROI/cadence/tracking regressions: PASS
+  65536 legal codes, every single-bit corruption, 435798 legacy + 140580 FPS layouts
+  Pressure telemetry, CSV fields, decode-gap exclusion, 74ms tracking recovery
+Camera/geometry/collision tests, ASan/UBSan: PASS
+Rendering detail and pressure profiles unchanged from v0.8.0; protocol remains compatible
+Real Windows/WGL maximize/fullscreen transitions and cloud-client integration: NOT RUN
