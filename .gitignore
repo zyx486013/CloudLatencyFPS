@@ -1,5 +1,6 @@
 # Build outputs
 *.exe
+!CloudLatencyFPS.exe
 *.obj
 *.o
 *.pdb
@@ -9,4 +10,4 @@
 __pycache__/
 # Measurement outputs
 *.csv
-CloudLatencyFPS_compare*.html
+CloudLatencyFPS_comparison.html
